@@ -31,7 +31,7 @@ function createBookCard(book, bookIndex = 0) {
     author,
     title,
     pages,
-    read
+    read,
   } = book;
   const bookList = document.getElementById('bookList');
   const bookCard = createAndAppendElement('div', 'bookCard', bookList);
