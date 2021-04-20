@@ -1,4 +1,6 @@
 let myLibrary = [];
+const bookList = document.getElementById('bookList');
+const bookCard = createAndAppendElement('div', 'bookCard', bookList);
 
 function Book(author, title, pages, read) {
   this.author = author;
@@ -27,16 +29,7 @@ function reloadLibrary(library) {
 
 function createBookCard(book, bookIndex = 0) {
   const { author, title, pages, read } = book;
-  const bookList = document.getElementById('bookList');
-  const bookCard = createAndAppendElement('div', 'bookCard', bookList);
   bookCard.setAttribute('data-bookIndex', bookIndex);
-
-  const authorEl = createAndAppendElement(
-    'div',
-    'bookAuthor',
-    bookCard,
-    author
-  );
 
   const deleteButton = createAndAppendElement(
     'button',
