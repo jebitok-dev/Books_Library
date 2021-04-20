@@ -1,6 +1,5 @@
-let myLibrary = [];
+const myLibrary = [];
 const bookList = document.getElementById('bookList');
-const bookCard = createAndAppendElement('div', 'bookCard', bookList);
 
 function Book(author, title, pages, read) {
   this.author = author;
@@ -22,13 +21,14 @@ function createAndAppendElement(
   return elem;
 }
 
+const bookCard = createAndAppendElement('div', 'bookCard', bookList);
+
 function reloadLibrary(library) {
   document.querySelector('#bookList').innerHTML = '';
   library.forEach((book, index) => createBookCard(book, index));
 }
 
 function createBookCard(book, bookIndex = 0) {
-  const { author, title, pages, read } = book;
   bookCard.setAttribute('data-bookIndex', bookIndex);
 
   const deleteButton = createAndAppendElement(
