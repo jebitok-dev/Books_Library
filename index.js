@@ -30,7 +30,10 @@ function createBookCard(book, bookIndex = 0) {
   const bookList = document.getElementById('bookList');
   const bookCard = createAndAppendElement('div', 'bookCard', bookList);
   bookCard.setAttribute('data-bookIndex', bookIndex);
+
+  const readEl = createAndAppendElement("div", "bookRead", bookCard, read);
   readEl.checked = read;
+
   const deleteButton = createAndAppendElement(
     'button',
     'deleteButton',
@@ -44,7 +47,7 @@ function createBookCard(book, bookIndex = 0) {
   const toggleRead = createAndAppendElement('input', 'toggleRead', bookCard);
   toggleRead.setAttribute('type', 'checkbox');
   toggleRead.checked = read;
-  toggleRead.addEventListener('change', function checkRead () {
+  toggleRead.addEventListener('change', function checkRead() {
     if (this.checked) {
       myLibrary[bookIndex].read = true;
     } else {

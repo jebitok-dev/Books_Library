@@ -19,5 +19,14 @@
     "ignorePatterns": [
       "dist/",
       "build/"
-    ]
+    ],
+    "trailing-comma": [true, {
+      "singleline": "never",
+      "multiline": {
+        "objects": "always",    
+        "arrays": "always",
+        "functions": "never",
+        "typeLiterals": "ignore"
+      }
+    }]
 }
