@@ -26,13 +26,18 @@ function reloadLibrary(library) {
 }
 
 function createBookCard(book, bookIndex = 0) {
-  const { read } = book;
+  /* eslint-disable no-unused-vars */
+  const { author, title, pages, read } = book;
   const bookList = document.getElementById('bookList');
   const bookCard = createAndAppendElement('div', 'bookCard', bookList);
   bookCard.setAttribute('data-bookIndex', bookIndex);
 
+  const authorEl = createAndAppendElement('div', 'bookAuthor', bookCard, author);
+  const titleEl = createAndAppendElement('div', 'bookTitle', bookCard, title);
+  const pagesEl = createAndAppendElement('div', 'bookPages', bookCard, pages);
   const readEl = createAndAppendElement('div', 'bookRead', bookCard, read);
   readEl.checked = read;
+  /* eslint-enable no-unused-vars */
 
   const deleteButton = createAndAppendElement(
     'button',
