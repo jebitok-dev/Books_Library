@@ -31,7 +31,7 @@ function createBookCard(book, bookIndex = 0) {
   const bookCard = createAndAppendElement('div', 'bookCard', bookList);
   bookCard.setAttribute('data-bookIndex', bookIndex);
 
-  const readEl = createAndAppendElement("div", "bookRead", bookCard, read);
+  const readEl = createAndAppendElement('div', "bookRead", bookCard, read);
   readEl.checked = read;
 
   const deleteButton = createAndAppendElement(
