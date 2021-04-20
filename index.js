@@ -70,41 +70,6 @@ function addBookToLibrary() {
   const read = document.getElementById('isRead').checked;
   myLibrary.push(new Book(author, title, pages, read));
   reloadLibrary(myLibrary);
-
-  const titleEl = createAndAppendElement('div', 'bookTitle', bookCard, title);
-  const pagesEl = createAndAppendElement('div', 'bookPages', bookCard, pages);
-  const readEl = createAndAppendElement('div', 'bookRead', bookCard, read);
-  readEl.checked = read;
-  const deleteButton = createAndAppendElement(
-    'button',
-    'deleteButton',
-    bookCard,
-    'Delete book'
-  );
-  deleteButton.addEventListener('click', () => {
-    myLibrary.splice(bookIndex, 1);
-    reloadLibrary(myLibrary);
-  });
-  const toggleRead = createAndAppendElement('input', 'toggleRead', bookCard);
-  toggleRead.setAttribute('type', 'checkbox');
-  toggleRead.checked = read;
-  toggleRead.addEventListener('change', function () {
-    if (this.checked) {
-      myLibrary[bookIndex].read = true;
-    } else {
-      myLibrary[bookIndex].read = false;
-    }
-    reloadLibrary(myLibrary);
-  });
-}
-
-function addBookToLibrary() {
-  const author = document.getElementById('userAuthor').value;
-  const title = document.getElementById('userTitle').value;
-  const pages = document.getElementById('userPages').value;
-  const read = document.getElementById('isRead').checked;
-  myLibrary.push(new Book(author, title, pages, read));
-  reloadLibrary(myLibrary);
 }
 document.getElementById('newBook').addEventListener('click', addBookToLibrary);
   
