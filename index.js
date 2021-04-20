@@ -11,7 +11,7 @@ function createAndAppendElement(
     htmlType,
     htmlClass,
     elementToAppendTo,
-    textContent = '');
+    textContent = '')
 {
   const elem = document.createElement(htmlType);
   elem.classList.add(htmlClass);
