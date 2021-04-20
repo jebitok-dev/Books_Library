@@ -37,10 +37,6 @@ function createBookCard(book, bookIndex = 0) {
     bookCard,
     author
   );
-  const titleEl = createAndAppendElement('div', 'bookTitle', bookCard, title);
-  const pagesEl = createAndAppendElement('div', 'bookPages', bookCard, pages);
-  const readEl = createAndAppendElement('div', 'bookRead', bookCard, read);
-  readEl.checked = read;
 
   const deleteButton = createAndAppendElement(
     'button',
