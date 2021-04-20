@@ -8,11 +8,11 @@ function Book(author, title, pages, read) {
 }
 
 function createAndAppendElement(
-    htmlType,
-    htmlClass,
-    elementToAppendTo,
-    textContent = '')
-{
+  htmlType,
+  htmlClass,
+  elementToAppendTo,
+  textContent = ''
+) {
   const elem = document.createElement(htmlType);
   elem.classList.add(htmlClass);
   elem.textContent = textContent;
