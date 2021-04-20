@@ -11,7 +11,7 @@ function createAndAppendElement(
   htmlType,
   htmlClass,
   elementToAppendTo,
-  textContent = ''
+  textContent = '',
 ) {
   const elem = document.createElement(htmlType);
   elem.classList.add(htmlClass);
@@ -38,7 +38,7 @@ function createBookCard(book, bookIndex = 0) {
     'button',
     'deleteButton',
     bookCard,
-    'Delete book'
+    'Delete book',
   );
   deleteButton.addEventListener('click', () => {
     myLibrary.splice(bookIndex, 1);
