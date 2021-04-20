@@ -18,5 +18,6 @@
     "ignorePatterns": [
       "dist/",
       "build/"
-    ]
+    ],
+    "no-use-before-define": ["error", { "variables": false }]
   }
