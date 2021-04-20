@@ -21,14 +21,14 @@ function createAndAppendElement(
   return elem;
 }
 
-const bookCard = createAndAppendElement('div', 'bookCard', bookList);
-
 function reloadLibrary(library) {
   document.querySelector('#bookList').innerHTML = '';
   library.forEach((book, index) => createBookCard(book, index));
 }
 
 function createBookCard(book, bookIndex = 0) {
+  const { read } = book
+  const bookCard = createAndAppendElement('div', 'bookCard', bookList);
   bookCard.setAttribute('data-bookIndex', bookIndex);
 
   const deleteButton = createAndAppendElement(
