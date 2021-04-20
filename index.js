@@ -27,7 +27,12 @@ function reloadLibrary(library) {
 
 function createBookCard(book, bookIndex = 0) {
   /* eslint-disable no-unused-vars */
-  const { author, title, pages, read } = book;
+  const {
+    author,
+    title,
+    pages,
+    read
+  } = book;
   const bookList = document.getElementById('bookList');
   const bookCard = createAndAppendElement('div', 'bookCard', bookList);
   bookCard.setAttribute('data-bookIndex', bookIndex);
