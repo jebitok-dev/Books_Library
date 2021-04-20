@@ -22,6 +22,8 @@ To get this project up and running locally, you must already have ruby and rails
 - Run `cd Books_Library`
 ```
 
+- [Live Version](https://booklibrary-od.netlify.app/)
+
 <!-- ### Run Tests -->
 
 ## Author
