@@ -11,7 +11,7 @@ function createAndAppendElement(
   htmlType,
   htmlClass,
   elementToAppendTo,
-  textContent = ""
+  textContent = ''
 ) {
   const elem = document.createElement(htmlType);
   elem.classList.add(htmlClass);
@@ -21,36 +21,30 @@ function createAndAppendElement(
 }
 
 function reloadLibrary(library) {
-  document.querySelector("#bookList").innerHTML = "";
+  document.querySelector('#bookList').innerHTML = '';
   library.forEach((book, index) => createBookCard(book, index));
 }
 
 function createBookCard(book, bookIndex = 0) {
-  const { author, title, pages, read } = book;
-  const bookList = document.getElementById("bookList");
-  const bookCard = createAndAppendElement("div", "bookCard", bookList);
-  bookCard.setAttribute("data-bookIndex", bookIndex);
-  const authorEl = createAndAppendElement(
-    "div",
-    "bookAuthor",
-    bookCard,
-    author
-  );
+  const { read } = book;
+  const bookList = document.getElementById('bookList');
+  const bookCard = createAndAppendElement('div', 'bookCard', bookList);
+  bookCard.setAttribute('data-bookIndex', bookIndex);
   readEl.checked = read;
   const deleteButton = createAndAppendElement(
-    "button",
-    "deleteButton",
+    'button',
+    'deleteButton',
     bookCard,
-    "Delete book"
+    'Delete book'
   );
-  deleteButton.addEventListener("click", () => {
+  deleteButton.addEventListener('click', () => {
     myLibrary.splice(bookIndex, 1);
     reloadLibrary(myLibrary);
   });
-  const toggleRead = createAndAppendElement("input", "toggleRead", bookCard);
-  toggleRead.setAttribute("type", "checkbox");
+  const toggleRead = createAndAppendElement('input', 'toggleRead', bookCard);
+  toggleRead.setAttribute('type', 'checkbox');
   toggleRead.checked = read;
-  toggleRead.addEventListener("change", function () {
+  toggleRead.addEventListener('change', function checkRead () {
     if (this.checked) {
       myLibrary[bookIndex].read = true;
     } else {
@@ -61,11 +55,11 @@ function createBookCard(book, bookIndex = 0) {
 }
 
 function addBookToLibrary() {
-  const author = document.getElementById("userAuthor").value;
-  const title = document.getElementById("userTitle").value;
-  const pages = document.getElementById("userPages").value;
-  const read = document.getElementById("isRead").checked;
+  const author = document.getElementById('userAuthor').value;
+  const title = document.getElementById('userTitle').value;
+  const pages = document.getElementById('userPages').value;
+  const read = document.getElementById('isRead').checked;
   myLibrary.push(new Book(author, title, pages, read));
   reloadLibrary(myLibrary);
 }
-document.getElementById("newBook").addEventListener("click", addBookToLibrary);
+document.getElementById('newBook').addEventListener('click', addBookToLibrary);
